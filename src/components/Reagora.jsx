@@ -18,7 +18,9 @@ class Reagora extends React.Component {
       // shareStream: undefined,
       remoteStreams: []
     };
-    this._initialize()
+    this._initialize().catch(err => {
+      // deal with err, tbd
+    })
   }
 
 

@@ -2,21 +2,14 @@ import React, { Component } from 'react';
 
 import Reagora from './components/Reagora';
 import withAgora from './components/withAgora';
+import StreamPlayer from './components/StreamPlayer';
 import logo from './logo.svg';
 import './App.css';
 
 class Mine extends Component {
-  componentDidMount() {
-    this.props.localStream && this.props.localStream.play('minemine')
-  }
-
-  componentWillUnmount() {
-    this.props.localStream && this.props.localStream.stop()
-  }
-
   render() {
     return (
-      <div id='minemine' style={{width:'400px', height:'300px'}}></div>
+      <StreamPlayer stream={this.props.localStream} width={240} height={180} showStreamStatus={true} showVolume={true}></StreamPlayer>
     )
   }
 }
